@@ -18,7 +18,7 @@
 //  4.) Add remaining elements and return sum
 
 function sumArray(array) {
-    if(array === false || array === null) {
+    if(array === false || array === null || array === undefined) {
       return 0
     } else {
       return array.sort((a, b) => a -b).slice(1, -1).reduce((sum, curr) => sum + curr, 0)

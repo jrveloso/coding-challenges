@@ -17,11 +17,9 @@
 //  6.) return final array
 
 function solution(str){
-   str = str.split("")
-   if(str.length % 2 !== 0) {
-    str.push("_")
-   }
-    return str.map((letter, index) => letter + str[index + 1]).filter((element, index) => index % 2 === 0)
+    str = str.split("")
+    if(str.length % 2 !== 0) {
+     str.push("_")
+    }
+     return str.map((letter, index) => letter + str[index + 1]).filter((element, index) => index % 2 === 0)
 }
-
-console.log(solution('abcdefg'))

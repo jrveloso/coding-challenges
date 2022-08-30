@@ -13,4 +13,3 @@
 //  4.) Join array and return 
 
 const noSpace = str => str.split(" ").join("")
-console.log(noSpace("hi there you are great"))

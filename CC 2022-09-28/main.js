@@ -32,5 +32,3 @@ function expandedForm(num) {
         }
     }).filter(el => el).join(" + ")
 }
-
-console.log(expandedForm(70304))

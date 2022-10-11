@@ -37,3 +37,23 @@ function moveLeft(arr, value) {
     return arr.flat()
 }
 // console.log(moveLeft(myArray, 1))
+
+
+//Day3
+//array of strings
+//array
+
+// myArr = ['hi', 'hello', 'howdy', 'hola', 'hej', 'hallo', 'heyyy']
+// move things around
+// => ['hola', 'hallo', 'hi', 'hej', 'hello', 'howdy', 'heyyy']
+
+
+function moveString(arr) {
+    const middle = arr.filter(el => !el.includes('a') && el.length <= 3)
+    const start = arr.filter(el => el.includes('a'))
+    const end = arr.filter(el => el.length > 3 && !el.includes('a'))
+    
+    return start.concat(middle.concat(end))
+}
+
+console.log(moveString(['hi', 'hello', 'howdy', 'hola', 'hej', 'hallo', 'heyyy']))

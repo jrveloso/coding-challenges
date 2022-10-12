@@ -57,3 +57,71 @@ function moveString(arr) {
 }
 
 console.log(moveString(['hi', 'hello', 'howdy', 'hola', 'hej', 'hallo', 'heyyy']))
+
+//Day 4
+// value
+// what type is that value?
+// will it ever be empty?
+//  Will there ever be more or less than three values in each subarray?
+// value only appears once in array
+
+// writing 2 functions, one to move value up one row and one to move down the row when stacked
+
+function moveUp(arr, value) {
+    //find the index of value in the subarray
+    let valueIndex
+    let subarrayIndex
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i].includes(value)) {
+            valueIndex = arr[i].indexOf(arr[i].find(el => el === value))
+            subarrayIndex = i
+        }
+    }
+    //get index of subarray holding value
+    //get index of subarray before other subarray
+    let uparrayIndex
+    if(subarrayIndex - 1 < 0) {
+        uparrayIndex = arr.length - 1
+    } else {
+        uparrayIndex = subarrayIndex - 1
+    }
+    //get value with index matching the original value
+    let swapValue = arr[uparrayIndex][valueIndex]
+    //place og value into that spot
+    arr[uparrayIndex][valueIndex] = value
+    //place 2nd value into og's spot
+    arr[subarrayIndex][valueIndex] = swapValue
+    //return array
+    return arr
+}
+
+function moveDown(arr, value) {
+    //find the index of value in the subarray
+    let valueIndex
+    let subarrayIndex
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i].includes(value)) {
+            valueIndex = arr[i].indexOf(arr[i].find(el => el === value))
+            subarrayIndex = i
+        }
+    }
+    //get index of subarray holding value
+    //get index of subarray before other subarray
+    let uparrayIndex
+    if(subarrayIndex + 1 > arr.length) {
+        uparrayIndex = 0
+    } else {
+        uparrayIndex = subarrayIndex + 1
+    }
+    //get value with index matching the original value
+    let swapValue = arr[uparrayIndex][valueIndex]
+    //place og value into that spot
+    arr[uparrayIndex][valueIndex] = value
+    //place 2nd value into og's spot
+    arr[subarrayIndex][valueIndex] = swapValue
+    //return array
+    return arr
+}
+
+console.log(moveUp([[0, 1, 2], [3, 4, 5], [6, 7, 8]], 3))
+console.log(moveDown([[0, 1, 2], [3, 4, 5], [6, 7, 8]], 3))

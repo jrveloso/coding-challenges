@@ -125,3 +125,30 @@ function moveDown(arr, value) {
 
 console.log(moveUp([[0, 1, 2], [3, 4, 5], [6, 7, 8]], 3))
 console.log(moveDown([[0, 1, 2], [3, 4, 5], [6, 7, 8]], 3))
+
+//Day 5
+
+function shuffleArray(arr) {
+    let newArr = []
+    arr = arr.flat()
+    
+    let i = 0
+    while(newArr.length < 9) {
+        let index = Math.floor(Math.random() * arr.length)
+        
+        if(!newArr.includes(arr[index] - 1)) {
+            newArr.push(arr[index] - 1)
+        }
+        i++
+    }
+    
+    let finalArr = [[],[],[]]
+    newArr = newArr.map(num => arr[num])
+
+    for(let i = 0; i < 3; i++) {
+        finalArr[i] = newArr.splice(0, 3)
+    }
+    return finalArr
+}
+
+console.log(shuffleArray([[1,2,3],[4,5,6],[7,8,9]]))

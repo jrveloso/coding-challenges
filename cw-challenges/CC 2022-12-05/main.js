@@ -15,7 +15,15 @@ function charCount(str) {
     //{} doesn't include char, set to 1
     //otherwise ++
     const count = {}
-    str.split("").forEach(char => count[char] ? count[char]++ : count[char] = 1)
+    // str.split("").forEach(char => count[char] ? count[char]++ : count[char] = 1)
+    for(const c of str) {
+        //looks for property of current char in count obj, can also set val with [] notation
+        if(count[c]) {
+            count[c]++
+        } else {
+            count[c] = 1
+        }
+    }
     return count
   }
   

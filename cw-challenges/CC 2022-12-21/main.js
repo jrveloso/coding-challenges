@@ -22,11 +22,11 @@
 
 function fib(n) {
   //loop n > 1
-  let sum = 0;
-  for (let i = 1; i < 3; i++) {
-    sum += n - i;
+  let arr = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    arr[i] = arr[i - 1] + arr[i - 2]
   }
-  return sum;
+  return arr[n];
 }
 
 console.log(fib(2), 1);

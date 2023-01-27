@@ -21,13 +21,13 @@
 const productExceptSelf = function(nums) {
     let output = []
 
-    // nums -> single value, setting arr to value of a each pass
+    // reduce R to L -> insert product into output each pass
     nums.reduceRight((prod, curr, i) => {
         output[i] = prod
-      console.log(prod)
         return prod * curr
     }, 1)
   
+    // reduce L to R -> multiply each each in output by product
     nums.reduce((prod, curr, i) => {
         output[i] *= prod
         return prod * curr

@@ -33,3 +33,5 @@ const prodNums = (nums) => {
 
   return output;
 };
+
+console.log(9 % 1)

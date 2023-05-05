@@ -1,23 +1,31 @@
-// Your task is to sum the differences between consecutive pairs in the array in descending order.
+// Task:
 
-// Example
+// Write a function that accepts two integers and returns the remainder of dividing the larger value by the smaller value.
 
-// [2, 1, 10]  -->  9
-// In descending order: [10, 2, 1]
+// Division by zero should return NaN.
 
-// Sum: (10 - 2) + (2 - 1) = 8 + 1 = 9
+// Examples:
 
-// If the array is empty or the array has only one element the result should be 0
+// n = 17
+// m = 5
+// result = 2 (remainder of `17 / 5`)
 
-function sumOfDifferences(arr) {
-  const desc = arr.sort((a, b) => b - a);
-  let resultsArr = [];
+// n = 13
+// m = 72
+// result = 7 (remainder of `72 / 13`)
 
-  for (let i = 1; i < arr.length; i++) {
-    resultsArr.push(desc[i - 1] - desc[i]);
+// n = 0
+// m = -1
+// result = 0 (remainder of `0 / -1`)
+
+// n = 0
+// m = 1
+// result - division by zero (refer to the specifications on how to handle this in your language)
+
+function remainder(n, m) {
+  if (Math.min(n, m) === 0) {
+    return NaN;
+  } else {
+    return Math.max(n, m) % Math.min(n, m);
   }
-  console.log(resultsArr)
-  return resultsArr.reduce((a, c) => a + Number(c), 0);
 }
-
-console.log(sumOfDifferences([2, 1, 10]), 9)

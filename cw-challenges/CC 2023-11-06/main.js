@@ -23,12 +23,10 @@ function array(string) {
   // if < 3 return null
   // else shift and pop array and return
   let str = string.split(",")
-//   console.log(str)
   if(str.length < 3) {
     return null
   } else {
     str.shift()
-    // console.log(str)
     str.pop()
     return str.join(" ")
   }

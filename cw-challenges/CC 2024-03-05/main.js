@@ -1,8 +1,37 @@
-// Complete the function which converts a binary number (given as a string) to a decimal number.
+// Given a string s. You have to return another string such that even-indexed and odd-indexed characters of s are grouped and groups are space-separated (see sample below)
 
-const binToDec = bin => parseInt(bin, 2)
+// Note:
+// 0 is considered to be an even index.
+// All input strings are valid with no spaces
+// input: 'CodeWars'
+// output 'CdWr oeas'
 
-console.log(binToDec('0'), 0)
-console.log(binToDec('1'), 1)
-console.log(binToDec('10'), 2)
-console.log(binToDec('1001001'), 73)
+// S[0] = 'C'
+// S[1] = 'o'
+// S[2] = 'd'
+// S[3] = 'e'
+// S[4] = 'W'
+// S[5] = 'a'
+// S[6] = 'r'
+// S[7] = 's'
+// Even indices 0, 2, 4, 6, so we have 'CdWr' as the first group
+// odd ones are 1, 3, 5, 7, so the second group is 'oeas'
+// And the final string to return is 'Cdwr oeas'
+
+function sortMyString(S) {
+  let spaceSepEvens = "";
+  let spaceSepOdds = "";
+  let i = 0;
+  for (let char of S) {
+    if (i % 2 === 0) {
+      spaceSepEvens += char;
+    } else {
+      spaceSepOdds += char;
+    }
+    i++
+  }
+  return `${spaceSepEvens} ${spaceSepOdds}`;
+}
+
+console.log(sortMyString("CodeWars"), "CdWr oeas");
+console.log(sortMyString("YCOLUE'VREER"), "YOU'RE CLEVER");

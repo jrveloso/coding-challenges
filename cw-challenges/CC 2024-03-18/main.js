@@ -19,7 +19,7 @@ function stray(numbers) {
 
   for (let value in obj) {
     if (obj[value] === 1) {
-      answer = value;
+      answer = Number(value);
     }
   }
   return answer

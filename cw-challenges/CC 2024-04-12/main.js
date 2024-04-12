@@ -11,12 +11,20 @@
 // return with index
 
 function min(arr, toReturn) {
-  let min = arr[0]
-    for(let i = 1; i < arr.length; i++) {
-        if(arr[i] < min) {
-            min = arr[i]
-        }
-    }
+//   let min = arr[0]
+//     for(let i = 1; i < arr.length; i++) {
+//         if(arr[i] < min) {
+//             min = arr[i]
+//         }
+//     }
+
+//     if(toReturn === 'value') {
+//         return min
+//     }
+//     if(toReturn === 'index') {
+//         return arr.indexOf(min)
+//     }
+    let min = Math.min(...arr)
 
     if(toReturn === 'value') {
         return min

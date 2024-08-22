@@ -17,7 +17,6 @@ const generateParenthesis = (n) => {
     let res = []
 
     function dfs(openP, closeP, s) {
-        console.log(openP, closeP)
         if(openP === closeP && openP + closeP === n * 2) {
             res.push(s)
             return

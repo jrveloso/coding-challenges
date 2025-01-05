@@ -8,7 +8,8 @@ const convert = function(s, numRows) {
     let idx = 0
     let d = 1
     //Create array
-    let rows = Array.from({ length: numRows }, () => [])
+    let rows = [...Array(numRows).map(() => [])]
+    console.log(rows)
 
     for(let char of s) {
         rows[idx].push(char)

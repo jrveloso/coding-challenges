@@ -7,10 +7,12 @@
 // array, integer -> integer
 // [3,2,2,3], 3 -> 2, [2,2,_, _]
 
-// Given array nums and integer val
-// loop nums
-// if nums[i] === val, pop -> push
-// else 
+// create index val 0
+// loop through nums
+// if current num does not equal val, assign nums[index] to current num
+// increment index
+// This moves any num that doesn't equal val in place forward
+// index keeps track of the number of nums not equal to val
 
 function removeElement(nums, val) {
     let index = 0
